@@ -9,8 +9,12 @@
     "start": "node dist",
     "start:dev": "node --watch dist",
     "test": "npx jest --passWithNoTests",
-    "test:coverage": "npx jest --coverage --watchAll=false --passWithNoTests"
+    "test:coverage": "npx jest --coverage --watchAll=false --passWithNoTests",
+    "prepare": "husky install"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "husky": "^8.0.0"
+  }
 }
