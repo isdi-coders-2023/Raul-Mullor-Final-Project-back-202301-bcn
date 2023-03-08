@@ -6,6 +6,7 @@ import {
   generalError,
   notFoundError,
 } from "./middlewares/errorMiddlewares/errorMiddlewares.js";
+import usersRouter from "./routers/usersRouter/userRouter.js";
 
 const allowedOrigins = [process.env.LOCALHOST!, process.env.NETLIFY_URL!];
 
@@ -18,6 +19,9 @@ export const app = express();
 app.disable("x-powered-by");
 app.use(cors(options));
 app.use(express.json());
+
+app.use("/users", usersRouter);
+
 app.use(morgan("dev"));
 app.use(notFoundError);
 app.use(generalError);
