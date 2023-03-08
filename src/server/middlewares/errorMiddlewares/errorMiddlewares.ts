@@ -1,6 +1,6 @@
 import createDebug from "debug";
 import { type NextFunction, type Request, type Response } from "express";
-import { CustomError } from "../../../CustomError/CustomError";
+import { CustomError } from "../../../CustomError/CustomError.js";
 
 const debug = createDebug("pathone:server:middlewares:errorMiddlewares");
 const notFoundStatusCode = 404;
@@ -34,5 +34,3 @@ export const generalError = (
 
   res.status(statusCode).json({ error: publicMessage });
 };
-
-export { CustomError };
