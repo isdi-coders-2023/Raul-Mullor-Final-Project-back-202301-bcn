@@ -1,12 +1,12 @@
 import { type NextFunction, type Request, type Response } from "express";
 import { CustomError } from "../../../CustomError/CustomError.js";
 import { User } from "../../../database/models/User.js";
+import bcryptjs from "bcryptjs";
+import jwt from "jsonwebtoken";
 import {
   type CustomJwtPayload,
   type UserCredentials,
-} from "../../../types/types";
-import jwt from "jsonwebtoken";
-import bcryptjs from "bcryptjs";
+} from "../../../types/types.js";
 
 const requestSucceedStatus = 200;
 

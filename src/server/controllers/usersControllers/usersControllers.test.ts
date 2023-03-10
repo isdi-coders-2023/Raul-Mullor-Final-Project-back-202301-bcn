@@ -1,11 +1,11 @@
 import { type NextFunction, type Request, type Response } from "express";
 import mongoose from "mongoose";
-import { User } from "../../../database/models/User";
-import { type UserCredentials } from "../../../types/types";
-import bcryptjs from "bcryptjs";
 import jwt from "jsonwebtoken";
-import loginUser from "./usersControllers";
-import { CustomError } from "../../../CustomError/CustomError";
+import bcryptjs from "bcryptjs";
+import { User } from "../../../database/models/User.js";
+import { type UserCredentials } from "../../../types/types.js";
+import loginUser from "./usersControllers.js";
+import { CustomError } from "../../../CustomError/CustomError.js";
 
 const res: Partial<Response> = {
   status: jest.fn().mockReturnThis(),

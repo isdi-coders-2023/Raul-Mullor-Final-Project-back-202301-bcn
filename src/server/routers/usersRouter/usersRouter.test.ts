@@ -1,12 +1,12 @@
 import { MongoMemoryServer } from "mongodb-memory-server";
 import mongoose from "mongoose";
-import connectDataBase from "../../../database/connectDataBase";
-import { User } from "../../../database/models/User";
 import bcryptjs from "bcryptjs";
-import { app } from "../../index.js";
-import request from "supertest";
-import { type UserCredentials, type UserData } from "../../../types/types";
 import jwt from "jsonwebtoken";
+import request from "supertest";
+import connectDataBase from "../../../database/connectDataBase.js";
+import { User } from "../../../database/models/User.js";
+import { app } from "../../index.js";
+import { type UserCredentials, type UserData } from "../../../types/types.js";
 
 let mongodbServer: MongoMemoryServer;
 
