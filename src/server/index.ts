@@ -18,10 +18,10 @@ export const app = express();
 
 app.disable("x-powered-by");
 app.use(cors(options));
+app.use(morgan("dev"));
 app.use(express.json());
 
 app.use("/users", usersRouter);
 
-app.use(morgan("dev"));
 app.use(notFoundError);
 app.use(generalError);
