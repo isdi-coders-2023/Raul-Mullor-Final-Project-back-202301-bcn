@@ -4,9 +4,12 @@ import bcryptjs from "bcryptjs";
 import jwt from "jsonwebtoken";
 import request from "supertest";
 import connectDataBase from "../../../database/connectDataBase.js";
-import { User } from "../../../database/models/User.js";
+import { User } from "../../../database/models/User/User.js";
 import { app } from "../../index.js";
-import { type UserCredentials, type UserData } from "../../../types/types.js";
+import {
+  type UserCredentials,
+  type UserData,
+} from "../../../types/users/types.js";
 
 let mongodbServer: MongoMemoryServer;
 

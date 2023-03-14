@@ -2,8 +2,8 @@ import { type NextFunction, type Request, type Response } from "express";
 import mongoose from "mongoose";
 import jwt from "jsonwebtoken";
 import bcryptjs from "bcryptjs";
-import { User } from "../../../database/models/User.js";
-import { type UserCredentials } from "../../../types/types.js";
+import { User } from "../../../database/models/User/User.js";
+import { type UserCredentials } from "../../../types/users/types.js";
 import loginUser from "./usersControllers.js";
 import { CustomError } from "../../../CustomError/CustomError.js";
 
