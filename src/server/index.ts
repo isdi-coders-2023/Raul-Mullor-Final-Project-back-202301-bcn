@@ -7,6 +7,7 @@ import {
   notFoundError,
 } from "./middlewares/errorMiddlewares/errorMiddlewares.js";
 import usersRouter from "./routers/usersRouter/userRouter.js";
+import charactersRouter from "./routers/charactersRouter/charactersRouter.js";
 
 const allowedOrigins = [process.env.LOCALHOST!, process.env.NETLIFY_URL!];
 
@@ -22,6 +23,6 @@ app.use(morgan("dev"));
 app.use(express.json());
 
 app.use("/users", usersRouter);
-
+app.use("/characters", charactersRouter);
 app.use(notFoundError);
 app.use(generalError);
