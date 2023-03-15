@@ -26,8 +26,8 @@ module.exports = {
   },
   plugins: ["react"],
   rules: {
-    "no-implicit-coercion": "off",
     "new-cap": ["error", { capIsNewExceptions: ["Router"] }],
+    "no-implicit-coercion": "off",
     "@typescript-eslint/naming-convention": "off",
   },
 };
