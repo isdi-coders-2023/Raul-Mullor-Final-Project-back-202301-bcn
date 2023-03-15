@@ -1,9 +1,14 @@
 import { type NextFunction, type Request, type Response } from "express";
 import { CustomError } from "../../../CustomError/CustomError.js";
 import { Character } from "../../../database/models/Characters/Characters.js";
+import { type CharacterDataStructure } from "../../../types/characters/types.js";
 
 export const getCharacters = async (
-  req: Request,
+  req: Request<
+    Record<string, unknown>,
+    Record<string, unknown>,
+    CharacterDataStructure
+  >,
   res: Response,
   next: NextFunction
 ) => {
@@ -15,9 +20,11 @@ export const getCharacters = async (
     const customError = new CustomError(
       "Bad request",
       400,
-      "Couldn't retrieve character"
+      "Couldn't retrieve characters"
     );
 
     next(customError);
   }
 };
+
+export default getCharacters;
